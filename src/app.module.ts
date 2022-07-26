@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { RepositoryModule } from './repository/repository.module';
 require('dotenv').config();
 
 @Module({
@@ -20,6 +21,7 @@ require('dotenv').config();
       },
       synchronize: false,
     }),
+    RepositoryModule,
   ],
 })
 export class AppModule {}
